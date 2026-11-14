@@ -1,0 +1,110 @@
+---
+import '@fontsource-variable/space-grotesk';
+import '@fontsource-variable/inter';
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { profile } from '../data/profile';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = `${profile.name} | Robotics & Embedded Systems`,
+  description = profile.description,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#09090b" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Devinda Kulatunge, home">
+          <span class="brand-mark">
+            d<span>.</span>
+          </span>
+          <span class="brand-name">
+            Devinda
+            <br />
+            Kulatunge
+          </span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="/#work">
+            Work<span class="nav-dot">.</span>
+          </a>
+          <a href="/#about">
+            About<span class="nav-dot">.</span>
+          </a>
+          <a href="/#contact">
+            Contact<span class="nav-dot">.</span>
+          </a>
+        </nav>
+        <a
+          class="header-github"
+          href={profile.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub profile, opens in a new tab"
+        >
+          <Icon name="github" size={20} />
+          <span>GitHub</span>
+          <Icon name="external" size={15} />
+        </a>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer container">
+      <a class="footer-name" href="/">
+        Devinda Kulatunge<span>.</span>
+      </a>
+      <p>© {new Date().getFullYear()} · Oulu, Finland</p>
+      <a href={profile.repository} target="_blank" rel="noopener noreferrer">
+        Website source <Icon name="external" size={15} />
+      </a>
+    </footer>
+    <script>
+      const items = document.querySelectorAll('.reveal');
+      if (
+        'IntersectionObserver' in window &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            }
+          },
+          { threshold: 0.06 },
+        );
+        items.forEach((item) => {
+          item.classList.add('will-reveal');
+          observer.observe(item);
+        });
+      }
+    </script>
+  </body>
+</html>

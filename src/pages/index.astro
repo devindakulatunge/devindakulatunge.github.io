@@ -1,0 +1,227 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Icon from '../components/Icon.astro';
+import { profile } from '../data/profile';
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const filters = ['All work', 'Robotics', 'Embedded systems', 'Digital design'];
+---
+
+<Layout>
+  <section class="hero container" aria-labelledby="intro-title">
+    <div class="hero-top">
+      <span class="eyebrow">
+        <span class="tiny-square"></span>Engineer · Oulu, Finland
+      </span>
+      <span class="hero-index">PORTFOLIO / 2026</span>
+    </div>
+    <div class="hero-main">
+      <div class="hero-title-wrap">
+        <h1 id="intro-title">
+          Hi, I’m
+          <br />
+          <span>Devinda.</span>
+        </h1>
+        <div class="hero-rule"></div>
+      </div>
+      <div class="hero-intro">
+        <p class="intro-lead">
+          I work where <span>hardware meets software.</span>
+        </p>
+        <p>
+          I’m an electrical engineer pursuing an MSc in Computer Science and Engineering at the
+          University of Oulu. My interests are robotics, embedded systems, and understanding how the
+          whole system works.
+        </p>
+        <p class="hero-previous">
+          Previously, power estimation and signoff validation at <strong>Synopsys.</strong>
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="button button-primary">
+            Explore my work <Icon name="down" size={18} />
+          </a>
+          <a href={`mailto:${profile.email}`} class="text-link">
+            Get in touch <Icon name="external" size={18} />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bottom">
+      <div class="discipline-list">
+        <span>Robotics</span>
+        <span>Embedded systems</span>
+        <span>Computer engineering</span>
+      </div>
+      <a class="scroll-cue" href="#work">
+        SCROLL TO EXPLORE <Icon name="down" size={14} />
+      </a>
+    </div>
+  </section>
+
+  <section class="work-section container" id="work" aria-labelledby="work-title">
+    <div class="section-heading reveal">
+      <div>
+        <p class="eyebrow">01 / Projects</p>
+        <h2 id="work-title">
+          Selected work<span>.</span>
+        </h2>
+      </div>
+      <p class="section-intro">
+        Systems I’m building, testing, <span>and learning from.</span>
+      </p>
+    </div>
+    <div class="work-toolbar">
+      <div class="project-filters" role="group" aria-label="Filter projects">
+        {filters.map((filter, i) => (
+          <button
+            type="button"
+            data-filter={i === 0 ? 'all' : filter}
+            aria-pressed={i === 0}
+            class:list={['filter-button', { active: i === 0 }]}
+          >
+            {filter}
+          </button>
+        ))}
+      </div>
+      <span class="work-count" aria-live="polite" aria-atomic="true">
+        03 PROJECTS
+      </span>
+    </div>
+    <div class="project-grid">
+      {projects.map((project, index) => (
+        <ProjectCard project={project} index={index} />
+      ))}
+    </div>
+    <p class="work-note">
+      The illustrations show each project’s architecture. Project pages describe the work and its
+      current stage.
+    </p>
+  </section>
+
+  <section class="about-section" id="about" aria-labelledby="about-title">
+    <div class="container about-grid">
+      <div class="about-heading reveal">
+        <p class="eyebrow">02 / Background</p>
+        <h2 id="about-title">
+          An engineer.
+          <br />
+          <span>Always learning.</span>
+        </h2>
+        <p class="about-location">
+          <span class="location-dot"></span>Based in Oulu, Finland
+        </p>
+        <a href={profile.github} target="_blank" rel="noopener noreferrer" class="text-link">
+          Find me on GitHub <Icon name="external" size={18} />
+        </a>
+      </div>
+      <div class="about-content reveal">
+        <p class="about-lead">
+          My background is in electrical and electronic engineering. I’m now going deeper into the
+          computing behind physical systems.
+        </p>
+        <p>
+          I studied at the University of Nottingham, then worked at Synopsys Lanka on power
+          estimation and signoff validation. Today, my master’s studies focus on computer
+          engineering, alongside projects in robotics simulation, embedded sensing, and digital
+          design.
+        </p>
+        <div class="experience-list">
+          <div class="experience-row">
+            <span class="experience-date">2026 to present</span>
+            <div>
+              <h3>University of Oulu</h3>
+              <p>
+                MSc (Tech), Computer Science and Engineering
+                <br />
+                <span>Specialization: Computer Engineering</span>
+              </p>
+            </div>
+          </div>
+          <div class="experience-row">
+            <span class="experience-date">2022 to 2026</span>
+            <div>
+              <h3>Synopsys Lanka</h3>
+              <p>
+                Power Estimation &amp; Signoff Validation Engineer
+                <br />
+                <span>PrimePower</span>
+              </p>
+            </div>
+          </div>
+          <div class="experience-row">
+            <span class="experience-date">BEng</span>
+            <div>
+              <h3>University of Nottingham</h3>
+              <p>Electrical and Electronic Engineering</p>
+            </div>
+          </div>
+        </div>
+        <div class="toolbox">
+          <span class="eyebrow">Working with</span>
+          <p>
+            C / C++ <span>·</span> Python <span>·</span> Linux <span>·</span> MATLAB <span>·</span>{' '}
+            Git <span>·</span> Embedded systems
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section container" id="contact" aria-labelledby="contact-title">
+    <div class="contact-top reveal">
+      <p class="eyebrow">03 / Contact</p>
+      <span class="contact-availability">
+        <span class="location-dot"></span>Open to engineering opportunities
+      </span>
+    </div>
+    <div class="contact-main reveal">
+      <h2 id="contact-title">
+        Let’s build
+        <br />
+        <span>something useful.</span>
+      </h2>
+      <a class="contact-arrow" href={`mailto:${profile.email}`} aria-label="Email Devinda">
+        <Icon name="external" size={54} />
+      </a>
+    </div>
+    <div class="contact-bottom">
+      <p>
+        Have a role, a project, or an interesting problem?
+        <br />
+        I’d like to hear about it.
+      </p>
+      <a class="email-link" href={`mailto:${profile.email}`}>
+        {profile.email}
+        <Icon name="external" size={18} />
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+  const cards = document.querySelectorAll<HTMLElement>('[data-category]');
+  const count = document.querySelector('.work-count');
+  filterButtons.forEach((button) =>
+    button.addEventListener('click', () => {
+      const selected = button.dataset.filter;
+      filterButtons.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      let visible = 0;
+      cards.forEach((card) => {
+        const show = selected === 'all' || card.dataset.category === selected;
+        card.hidden = !show;
+        if (show) {
+          visible++;
+          card.classList.add('is-visible');
+        }
+      });
+      if (count)
+        count.textContent = `${String(visible).padStart(2, '0')} PROJECT${visible === 1 ? '' : 'S'}`;
+    }),
+  );
+</script>

@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+interface Props {
+  project: CollectionEntry<'projects'>;
+  index: number;
+}
+const { project, index } = Astro.props;
+const { data, id } = project;
+---
+
+<article class="project-card reveal" data-category={data.category}>
+  <a class="project-image-link" href={`/work/${id}/`} aria-label={`Read about ${data.title}`}>
+    <div class="project-image">
+      {data.video ? (
+        <video
+          src={data.video}
+          poster={data.image}
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="none"
+          aria-label={data.imageAlt}
+        ></video>
+      ) : (
+        <img src={data.image} alt={data.imageAlt} width="900" height="620" loading="lazy" />
+      )}
+      <span class="project-number">0{index + 1}</span>
+      <span class="image-link-icon">
+        <Icon name="external" size={23} />
+      </span>
+    </div>
+  </a>
+  <div class="project-meta">
+    <span>{data.category}</span>
+    <span>{data.year}</span>
+  </div>
+  <h3>
+    <a href={`/work/${id}/`}>{data.shortTitle}</a>
+  </h3>
+  <p class="project-description">{data.description}</p>
+  <ul class="tags" aria-label="Technologies">
+    {data.tags.slice(0, 4).map((tag) => (
+      <li>{tag}</li>
+    ))}
+  </ul>
+  <a class="text-link project-read" href={`/work/${id}/`}>
+    Explore project <Icon name="arrow" size={18} />
+  </a>
+</article>
