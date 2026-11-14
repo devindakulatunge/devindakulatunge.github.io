@@ -2,7 +2,7 @@
 
 A custom Astro portfolio for robotics, embedded systems, and computer engineering. Black background, red accents, locally bundled fonts, a project gallery, and Markdown project pages.
 
-The initial deployment address is `https://devindakulatunge.github.io`. The intended custom domain is `devinda.io`; no domain redirect is enabled in this source until the domain is configured.
+The primary website address is `https://devinda.io`. The source is hosted in the `devindakulatunge.github.io` repository, and the site is published through GitHub Pages. Canonical and social sharing URLs use the custom domain.
 
 ## Run locally
 
@@ -81,13 +81,13 @@ Keep videos short and compressed. Use an image as the poster so the preview rema
 3. Merge the portfolio source into `main`. The included workflow builds and publishes it. Pull requests run the build without publishing.
 4. Open the deployment link from the completed workflow.
 
-## Connect devinda.io when ready
+## Custom domain
 
 1. Add `devinda.io` as the custom domain in **Settings → Pages**.
 2. Follow GitHub's current DNS instructions at your domain provider: <https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site>.
-3. Add a repository Actions variable named `SITE_URL` with the value `https://devinda.io` in **Settings → Secrets and variables → Actions → Variables**.
-4. Run the deployment workflow again so canonical URLs use the custom domain.
-5. Enable **Enforce HTTPS** after GitHub has issued the certificate.
+3. Enable **Enforce HTTPS** after GitHub has issued the certificate.
+
+The build defaults to `https://devinda.io` for canonical and social sharing URLs. A repository Actions variable named `SITE_URL` can override this address for another deployment.
 
 ## Content notes
 
