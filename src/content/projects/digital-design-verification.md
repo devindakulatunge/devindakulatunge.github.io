@@ -1,6 +1,6 @@
 ---
 title: Digital Design & Verification
-shortTitle: From RTL to gate level
+shortTitle: Digital design & verification
 description: Digital design coursework exploring simulation, timing constraints, gate level behavior, and verification coverage.
 category: Digital design
 status: Coursework
@@ -10,6 +10,8 @@ image: /images/digital-verification.svg
 imageAlt: Illustrative digital waveform with clock, RTL, and gate level signals beside a simplified logic diagram.
 tags: [RTL simulation, Timing analysis, Gate level simulation, Verification]
 role: Design implementation, simulation, and analysis through laboratory exercises and project work.
+contribution: Design implementation, simulation, and timing analysis.
+progress: Laboratory and project work covering RTL, gate level simulation, timing constraints, and verification coverage.
 context: Digital techniques coursework · University of Oulu
 ---
 

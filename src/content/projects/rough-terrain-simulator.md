@@ -1,6 +1,6 @@
 ---
 title: Rough Terrain Robotics Simulator
-shortTitle: A world to test robots in
+shortTitle: Rough terrain robotics simulator
 description: A modular outdoor robotics simulator connecting physics, sensing, control, and data recording.
 category: Robotics
 status: In development
@@ -10,6 +10,8 @@ image: /images/robotics-simulator.svg
 imageAlt: Conceptual illustration of a wheeled robot above a wireframe terrain, with physics, sensing, and control layers.
 tags: [C++, Python, Project Chrono, ZeroMQ, ROS 2]
 role: Core framework, physics integration, environment, visualization, Python API, and CLI.
+contribution: Core framework, physics, Python API, and CLI.
+progress: Core and server built and exercised with simulation stepping and pose streaming. Integration is ongoing.
 context: Team project · University of Oulu
 ---
 

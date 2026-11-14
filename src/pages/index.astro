@@ -5,7 +5,6 @@ import ProjectCard from '../components/ProjectCard.astro';
 import Icon from '../components/Icon.astro';
 import { profile } from '../data/profile';
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
-const filters = ['All work', 'Robotics', 'Embedded systems', 'Digital design'];
 ---
 
 <Layout>
@@ -14,53 +13,30 @@ const filters = ['All work', 'Robotics', 'Embedded systems', 'Digital design'];
       <span class="eyebrow">
         <span class="tiny-square"></span>Engineer · Oulu, Finland
       </span>
-      <span class="hero-index">PORTFOLIO / 2026</span>
+      <a class="hero-availability" href="#contact">
+        <span class="location-dot"></span>Open to engineering opportunities
+      </a>
     </div>
     <div class="hero-main">
       <div class="hero-title-wrap">
         <h1 id="intro-title">
-          Hi, I’m
-          <br />
-          <span>Devinda.</span>
+          Devinda <span>Kulatunge.</span>
         </h1>
-        <div class="hero-rule"></div>
+        <p class="intro-lead">Robotics, embedded systems, and the software behind them.</p>
       </div>
-      <div class="hero-intro">
-        <p class="intro-lead">
-          I work where <span>hardware meets software.</span>
-        </p>
-        <p>
-          I’m an electrical engineer pursuing an MSc in Computer Science and Engineering at the
-          University of Oulu. My interests are robotics, embedded systems, and understanding how the
-          whole system works.
-        </p>
-        <p class="hero-previous">
-          Previously, power estimation and signoff validation at <strong>Synopsys.</strong>
-        </p>
-        <div class="hero-actions">
-          <a href="#work" class="button button-primary">
-            Explore my work <Icon name="down" size={18} />
-          </a>
-          <a href={`mailto:${profile.email}`} class="text-link">
-            Get in touch <Icon name="external" size={18} />
-          </a>
-        </div>
+      <div class="hero-actions">
+        <a href={`mailto:${profile.email}`} class="button button-primary">
+          Get in touch <Icon name="mail" size={18} />
+        </a>
+        <a href={profile.github} target="_blank" rel="noopener noreferrer" class="text-link">
+          <Icon name="github" size={18} /> GitHub <Icon name="external" size={15} />
+        </a>
       </div>
-    </div>
-    <div class="hero-bottom">
-      <div class="discipline-list">
-        <span>Robotics</span>
-        <span>Embedded systems</span>
-        <span>Computer engineering</span>
-      </div>
-      <a class="scroll-cue" href="#work">
-        SCROLL TO EXPLORE <Icon name="down" size={14} />
-      </a>
     </div>
   </section>
 
   <section class="work-section container" id="work" aria-labelledby="work-title">
-    <div class="section-heading reveal">
+    <div class="section-heading">
       <div>
         <p class="eyebrow">01 / Projects</p>
         <h2 id="work-title">
@@ -68,25 +44,8 @@ const filters = ['All work', 'Robotics', 'Embedded systems', 'Digital design'];
         </h2>
       </div>
       <p class="section-intro">
-        Systems I’m building, testing, <span>and learning from.</span>
+        University projects in robotics, <span>embedded sensing, and digital design.</span>
       </p>
-    </div>
-    <div class="work-toolbar">
-      <div class="project-filters" role="group" aria-label="Filter projects">
-        {filters.map((filter, i) => (
-          <button
-            type="button"
-            data-filter={i === 0 ? 'all' : filter}
-            aria-pressed={i === 0}
-            class:list={['filter-button', { active: i === 0 }]}
-          >
-            {filter}
-          </button>
-        ))}
-      </div>
-      <span class="work-count" aria-live="polite" aria-atomic="true">
-        03 PROJECTS
-      </span>
     </div>
     <div class="project-grid">
       {projects.map((project, index) => (
@@ -94,19 +53,19 @@ const filters = ['All work', 'Robotics', 'Embedded systems', 'Digital design'];
       ))}
     </div>
     <p class="work-note">
-      The illustrations show each project’s architecture. Project pages describe the work and its
-      current stage.
+      Project visuals are architecture illustrations. Each writeup explains my contribution and the
+      current stage of the work.
     </p>
   </section>
 
   <section class="about-section" id="about" aria-labelledby="about-title">
     <div class="container about-grid">
-      <div class="about-heading reveal">
-        <p class="eyebrow">02 / Background</p>
+      <div class="about-heading">
+        <p class="eyebrow">02 / About me</p>
         <h2 id="about-title">
-          An engineer.
+          Hi, I’m Devinda.
           <br />
-          <span>Always learning.</span>
+          <span>I like figuring things out.</span>
         </h2>
         <p class="about-location">
           <span class="location-dot"></span>Based in Oulu, Finland
@@ -115,16 +74,20 @@ const filters = ['All work', 'Robotics', 'Embedded systems', 'Digital design'];
           Find me on GitHub <Icon name="external" size={18} />
         </a>
       </div>
-      <div class="about-content reveal">
+      <div class="about-content">
         <p class="about-lead">
-          My background is in electrical and electronic engineering. I’m now going deeper into the
-          computing behind physical systems.
+          I’m an electrical engineer interested in how hardware and software work together to solve
+          practical problems.
         </p>
         <p>
-          I studied at the University of Nottingham, then worked at Synopsys Lanka on power
-          estimation and signoff validation. Today, my master’s studies focus on computer
-          engineering, alongside projects in robotics simulation, embedded sensing, and digital
-          design.
+          After studying at the University of Nottingham, I worked at Synopsys Lanka on power
+          estimation and signoff validation for PrimePower. I’m now pursuing an MSc in Computer
+          Science and Engineering at the University of Oulu, specializing in Computer Engineering.
+        </p>
+        <p>
+          My current projects take that interest into robot simulation and embedded sensing. I’m
+          drawn to the connections between components: how a physical model affects a sensor, how
+          signal quality affects a decision, and what a test actually proves.
         </p>
         <div class="experience-list">
           <div class="experience-row">
@@ -169,13 +132,13 @@ const filters = ['All work', 'Robotics', 'Embedded systems', 'Digital design'];
   </section>
 
   <section class="contact-section container" id="contact" aria-labelledby="contact-title">
-    <div class="contact-top reveal">
+    <div class="contact-top">
       <p class="eyebrow">03 / Contact</p>
       <span class="contact-availability">
         <span class="location-dot"></span>Open to engineering opportunities
       </span>
     </div>
-    <div class="contact-main reveal">
+    <div class="contact-main">
       <h2 id="contact-title">
         Let’s build
         <br />
@@ -198,30 +161,3 @@ const filters = ['All work', 'Robotics', 'Embedded systems', 'Digital design'];
     </div>
   </section>
 </Layout>
-
-<script>
-  const filterButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
-  const cards = document.querySelectorAll<HTMLElement>('[data-category]');
-  const count = document.querySelector('.work-count');
-  filterButtons.forEach((button) =>
-    button.addEventListener('click', () => {
-      const selected = button.dataset.filter;
-      filterButtons.forEach((item) => {
-        const active = item === button;
-        item.classList.toggle('active', active);
-        item.setAttribute('aria-pressed', String(active));
-      });
-      let visible = 0;
-      cards.forEach((card) => {
-        const show = selected === 'all' || card.dataset.category === selected;
-        card.hidden = !show;
-        if (show) {
-          visible++;
-          card.classList.add('is-visible');
-        }
-      });
-      if (count)
-        count.textContent = `${String(visible).padStart(2, '0')} PROJECT${visible === 1 ? '' : 'S'}`;
-    }),
-  );
-</script>

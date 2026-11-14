@@ -16,6 +16,8 @@ const projects = defineCollection({
     imageAlt: z.string(),
     tags: z.array(z.string()),
     role: z.string(),
+    contribution: z.string(),
+    progress: z.string(),
     context: z.string(),
     repository: z.string().url().optional(),
     video: z.string().optional(),

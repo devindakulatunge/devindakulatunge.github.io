@@ -25,7 +25,7 @@ npm run preview
 | Content                                            | File                                  |
 | -------------------------------------------------- | ------------------------------------- |
 | Email, links, and shared metadata                  | `src/data/profile.ts`                 |
-| Introduction, background, and experience           | `src/pages/index.astro`               |
+| Compact introduction, background, and experience   | `src/pages/index.astro`               |
 | Colors, typography, spacing, and responsive layout | `src/styles/global.css`               |
 | Project summaries and writeups                     | `src/content/projects/*.md`           |
 | Images and videos                                  | `public/images/` and `public/videos/` |
@@ -49,6 +49,8 @@ image: /images/your-project.jpg
 imageAlt: A useful description of the image.
 tags: [C++, Python]
 role: Explain what you personally contributed.
+contribution: A short version of your contribution for the project card.
+progress: What has actually been built or tested, and what is still ongoing.
 context: Personal project
 ---
 
@@ -65,7 +67,7 @@ Describe your work and the important decisions.
 Include evidence and state the limits of what was tested.
 ```
 
-Categories currently supported by the schema and homepage filters are `Robotics`, `Embedded systems`, and `Digital design`. Update both the schema in `src/content.config.ts` and the filter list in `src/pages/index.astro` to add a category.
+Categories currently supported by the schema are `Robotics`, `Embedded systems`, and `Digital design`. Update `src/content.config.ts` to add a category. The homepage shows every project directly, without filters. Each card includes its stage and a short personal contribution; the project page adds a fuller contribution and progress summary before the illustration.
 
 Optional frontmatter fields:
 
@@ -95,4 +97,4 @@ The project writeups describe ongoing work and coursework. No benchmark or clini
 
 The initial profile uses the supplied university email. Update `src/data/profile.ts` if you prefer another public contact address. There is no inactive résumé button; add a link once you have supplied the PDF you want to share.
 
-The layout takes inspiration from the project presentation of Conor Wood Hayes and the introductory approach of Amber Handal. The implementation and illustrations are original.
+The layout takes inspiration from the project presentation of Conor Wood Hayes. A compact introduction leads directly into the work, with the full personal background below it. Content is visible without JavaScript; the navigation remains available while scrolling. The implementation and illustrations are original.

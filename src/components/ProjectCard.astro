@@ -9,7 +9,7 @@ const { project, index } = Astro.props;
 const { data, id } = project;
 ---
 
-<article class="project-card reveal" data-category={data.category}>
+<article class="project-card">
   <a class="project-image-link" href={`/work/${id}/`} aria-label={`Read about ${data.title}`}>
     <div class="project-image">
       {data.video ? (
@@ -24,9 +24,18 @@ const { data, id } = project;
           aria-label={data.imageAlt}
         ></video>
       ) : (
-        <img src={data.image} alt={data.imageAlt} width="900" height="620" loading="lazy" />
+        <img
+          src={data.image}
+          alt={data.imageAlt}
+          width="900"
+          height="620"
+          loading={index === 0 ? 'eager' : 'lazy'}
+          fetchpriority={index === 0 ? 'high' : 'auto'}
+          decoding="async"
+        />
       )}
       <span class="project-number">0{index + 1}</span>
+      <span class="project-stage">{data.status}</span>
       <span class="image-link-icon">
         <Icon name="external" size={23} />
       </span>
@@ -40,12 +49,16 @@ const { data, id } = project;
     <a href={`/work/${id}/`}>{data.shortTitle}</a>
   </h3>
   <p class="project-description">{data.description}</p>
+  <p class="project-contribution">
+    <span>My contribution</span>
+    {data.contribution}
+  </p>
   <ul class="tags" aria-label="Technologies">
     {data.tags.slice(0, 4).map((tag) => (
       <li>{tag}</li>
     ))}
   </ul>
   <a class="text-link project-read" href={`/work/${id}/`}>
-    Explore project <Icon name="arrow" size={18} />
+    View project <Icon name="arrow" size={18} />
   </a>
 </article>

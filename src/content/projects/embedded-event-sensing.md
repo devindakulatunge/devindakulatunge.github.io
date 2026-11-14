@@ -1,7 +1,7 @@
 ---
 title: Embedded Event Sensing
-shortTitle: When should a sensor be trusted?
-description: A bench prototype investigating signal quality checks for an event detector on a Raspberry Pi Pico W.
+shortTitle: Embedded event sensing
+description: An infant feeding risk research project investigating whether signal quality checks can reduce false alerts in a bench prototype.
 category: Embedded systems
 status: Research prototype in development
 year: '2026'
@@ -10,6 +10,8 @@ image: /images/embedded-sensing.svg
 imageAlt: Conceptual signal pipeline from a waveform through a Pico W based quality check to extracted features and an alert.
 tags: [Raspberry Pi Pico W, C/C++, Signal quality, MQTT and TLS]
 role: Sensors, Pico firmware, bench fixture, and local outputs; shared testing, analysis, reporting, and demonstration.
+contribution: Sensors, Pico firmware, bench fixture, and local outputs.
+progress: Proposal submitted. Design and implementation are ongoing, with evaluation still to come.
 context: IoT course research project · University of Oulu
 ---
 
