@@ -5,7 +5,8 @@ export const profile = {
   email: 'Devinda.Kulatunge@student.oulu.fi',
   github: 'https://github.com/devindakulatunge',
   repository: 'https://github.com/devindakulatunge/devindakulatunge.github.io',
-  focus: ['Computer Engineering', 'Power', 'SoC', 'EDA', 'Robotics'],
+  roles: ['Software Architect', 'Systems Engineer'],
+  focus: ['Robotics', 'EDA', 'SoC Power Analysis'],
   description:
-    'Devinda Kulatunge’s engineering portfolio. Computer engineering, power, SoC, EDA, and robotics.',
+    'Devinda Kulatunge’s engineering portfolio. Software architect and systems engineer working across robotics, EDA, and SoC power analysis.',
 };

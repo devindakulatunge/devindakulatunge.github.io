@@ -10,7 +10,7 @@ interface Props {
   description?: string;
 }
 const {
-  title = `${profile.name} | Computer Engineering, Power, SoC, EDA & Robotics`,
+  title = `${profile.name} | ${profile.roles.join(' & ')}`,
   description = profile.description,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -44,6 +44,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
           </span>
           <span class="brand-copy">
             <span class="brand-name">{profile.name}</span>
+            <span class="brand-focus brand-roles">
+              {profile.roles.map((role) => (
+                <span>{role}</span>
+              ))}
+            </span>
             <span class="brand-focus">
               {profile.focus.map((focus) => (
                 <span>{focus}</span>

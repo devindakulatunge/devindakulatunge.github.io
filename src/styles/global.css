@@ -158,6 +158,15 @@ ul {
   color: var(--red);
   margin-right: 9px;
 }
+.brand-roles {
+  margin-top: 6px;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+}
+.brand-roles + .brand-focus {
+  margin-top: 4px;
+}
 .site-header nav {
   display: flex;
   gap: 36px;
@@ -987,6 +996,9 @@ ul {
   }
   .brand-focus > span:not(:first-child)::before {
     margin-right: 8px;
+  }
+  .brand-roles {
+    font-size: 11px;
   }
   .site-header nav {
     gap: 17px;

@@ -32,6 +32,8 @@ npm run preview
 | Project page layout                                 | `src/pages/work/[id].astro`           |
 | GitHub Pages publishing                             | `.github/workflows/deploy.yml`        |
 
+The `roles` and `focus` arrays in `src/data/profile.ts` set the two lines beneath the name in the header.
+
 ## Add a project
 
 Create `src/content/projects/your-project.md`. Its filename becomes the URL, such as `/work/your-project/`.
