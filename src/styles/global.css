@@ -113,7 +113,24 @@ ul {
   justify-content: space-between;
 }
 .brand {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+.brand-mark {
+  flex-shrink: 0;
+  font-family: var(--heading);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -7px;
+  padding-right: 6px;
+}
+.brand-mark span {
+  color: var(--red);
+}
+.brand-copy {
   min-width: 0;
 }
 .brand-name {
@@ -951,6 +968,14 @@ ul {
     grid-template-columns: 1fr;
     gap: 9px;
     padding-block: 15px 5px;
+  }
+  .brand {
+    gap: 12px;
+  }
+  .brand-mark {
+    font-size: 40px;
+    letter-spacing: -5px;
+    padding-right: 4px;
   }
   .brand-name {
     font-size: 18px;

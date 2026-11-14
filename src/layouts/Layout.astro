@@ -39,11 +39,16 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="/" aria-label="Devinda Kulatunge, home">
-          <span class="brand-name">{profile.name}</span>
-          <span class="brand-focus">
-            {profile.focus.map((focus) => (
-              <span>{focus}</span>
-            ))}
+          <span class="brand-mark" aria-hidden="true">
+            d<span>.</span>
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">{profile.name}</span>
+            <span class="brand-focus">
+              {profile.focus.map((focus) => (
+                <span>{focus}</span>
+              ))}
+            </span>
           </span>
         </a>
         <nav aria-label="Main navigation">
