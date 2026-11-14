@@ -22,15 +22,15 @@ npm run preview
 
 ## Where to edit
 
-| Content                                            | File                                  |
-| -------------------------------------------------- | ------------------------------------- |
-| Email, links, and shared metadata                  | `src/data/profile.ts`                 |
-| Compact introduction, background, and experience   | `src/pages/index.astro`               |
-| Colors, typography, spacing, and responsive layout | `src/styles/global.css`               |
-| Project summaries and writeups                     | `src/content/projects/*.md`           |
-| Images and videos                                  | `public/images/` and `public/videos/` |
-| Project page layout                                | `src/pages/work/[id].astro`           |
-| GitHub Pages publishing                            | `.github/workflows/deploy.yml`        |
+| Content                                             | File                                  |
+| --------------------------------------------------- | ------------------------------------- |
+| Name, engineering focus, email, links, and metadata | `src/data/profile.ts`                 |
+| Project gallery, background, and experience         | `src/pages/index.astro`               |
+| Colors, typography, spacing, and responsive layout  | `src/styles/global.css`               |
+| Project summaries and writeups                      | `src/content/projects/*.md`           |
+| Images and videos                                   | `public/images/` and `public/videos/` |
+| Project page layout                                 | `src/pages/work/[id].astro`           |
+| GitHub Pages publishing                             | `.github/workflows/deploy.yml`        |
 
 ## Add a project
 
@@ -97,4 +97,4 @@ The project writeups describe ongoing work and coursework. No benchmark or clini
 
 The initial profile uses the supplied university email. Update `src/data/profile.ts` if you prefer another public contact address. There is no inactive résumé button; add a link once you have supplied the PDF you want to share.
 
-The layout takes inspiration from the project presentation of Conor Wood Hayes. A compact introduction leads directly into the work, with the full personal background below it. Content is visible without JavaScript; the navigation remains available while scrolling. The implementation and illustrations are original.
+The layout takes inspiration from the project presentation of Conor Wood Hayes. The header pairs a small name with the engineering focus areas, and the homepage opens directly with the work. The full personal background and location appear below it. Content is visible without JavaScript; the navigation remains available while scrolling. The implementation and illustrations are original.

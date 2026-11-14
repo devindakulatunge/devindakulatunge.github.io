@@ -5,6 +5,7 @@ export const profile = {
   email: 'Devinda.Kulatunge@student.oulu.fi',
   github: 'https://github.com/devindakulatunge',
   repository: 'https://github.com/devindakulatunge/devindakulatunge.github.io',
+  focus: ['Computer Engineering', 'Power', 'SoC', 'EDA', 'Robotics'],
   description:
-    'Engineer working across robotics, embedded systems, and computer engineering. Based in Oulu, Finland.',
+    'Devinda Kulatunge’s engineering portfolio. Computer engineering, power, SoC, EDA, and robotics.',
 };

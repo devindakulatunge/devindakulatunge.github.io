@@ -10,7 +10,7 @@ interface Props {
   description?: string;
 }
 const {
-  title = `${profile.name} | Robotics & Embedded Systems`,
+  title = `${profile.name} | Computer Engineering, Power, SoC, EDA & Robotics`,
   description = profile.description,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -39,13 +39,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="/" aria-label="Devinda Kulatunge, home">
-          <span class="brand-mark">
-            d<span>.</span>
-          </span>
-          <span class="brand-name">
-            Devinda
-            <br />
-            Kulatunge
+          <span class="brand-name">{profile.name}</span>
+          <span class="brand-focus">
+            {profile.focus.map((focus) => (
+              <span>{focus}</span>
+            ))}
           </span>
         </a>
         <nav aria-label="Main navigation">
@@ -77,9 +75,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     </main>
     <footer class="site-footer container">
       <a class="footer-name" href="/">
-        Devinda Kulatunge<span>.</span>
+        devinda<span>.</span>io
       </a>
-      <p>© {new Date().getFullYear()} · Oulu, Finland</p>
+      <p>© {new Date().getFullYear()}</p>
       <a href={profile.repository} target="_blank" rel="noopener noreferrer">
         Website source <Icon name="external" size={15} />
       </a>
