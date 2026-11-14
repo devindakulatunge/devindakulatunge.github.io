@@ -34,6 +34,8 @@ npm run preview
 
 The `roles` and `focus` arrays in `src/data/profile.ts` set the two lines beneath the name in the header.
 
+The project grid fits up to three columns according to the available space, using a preferred minimum card width of `18.75rem` (300 pixels at the default font size). Cards fit narrower screens without horizontal overflow. Page gutters and gallery spacing scale fluidly, the header can grow with wrapped text, and short viewports release sticky navigation so enlarged content has room to scroll.
+
 ## Add a project
 
 Create `src/content/projects/your-project.md`. Its filename becomes the URL, such as `/work/your-project/`.
