@@ -97,6 +97,14 @@ The build defaults to `https://devinda.io` for canonical and social sharing URLs
 
 ## Content notes
 
+The About section uses locally bundled organisation logos from their official sources:
+
+- University of Oulu: the white symbol from the [university icon sprite](https://www.oulu.fi/themes/custom/nextgen/dist/icons.svg), following the [logo guidelines](https://www.oulu.fi/en/brand-guidelines/design-elements/logo).
+- Synopsys: the white SVG from the [official logo pack](https://www.synopsys.com/content/dam/synopsys/company/about/legal/synopsys-logos/synopsys-logos.zip).
+- University of Nottingham: the [official logo for dark backgrounds](https://www.nottingham.ac.uk/etc.clientlibs/uon/clientlibs/clientlib-v2/resources/images/UoN-Logo-Dark.svg).
+
+These marks identify the organisations in the education and employment history. They remain the property of their respective owners.
+
 The project writeups describe ongoing work and coursework. No benchmark or clinical validation results are invented. The SVG project illustrations are architecture concepts, not photographs, simulator screenshots, or measured waveform captures.
 
 The initial profile uses the supplied university email. Update `src/data/profile.ts` if you prefer another public contact address. There is no inactive résumé button; add a link once you have supplied the PDF you want to share.

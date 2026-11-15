@@ -500,16 +500,23 @@ ul {
 }
 .experience-row {
   display: grid;
-  grid-template-columns: 124px 1fr;
-  gap: 18px;
+  grid-template-columns: 112px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
   padding: 24px 0;
   border-top: 1px solid #303037;
 }
-.experience-date {
-  font-family: var(--heading);
-  font-size: 10px;
-  color: #9c9ba6;
-  padding-top: 3px;
+.experience-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  min-height: 64px;
+}
+.experience-logo img {
+  width: 112px;
+  height: 64px;
+  object-fit: contain;
 }
 .experience-row h3 {
   font-size: 15px;
@@ -851,10 +858,6 @@ ul {
   .about-heading h2 {
     font-size: 40px;
   }
-  .experience-row {
-    grid-template-columns: 105px 1fr;
-    gap: 12px;
-  }
   .project-body {
     gap: 50px;
     grid-template-columns: 210px minmax(0, 1fr);
@@ -1014,12 +1017,17 @@ ul {
     font-size: 13px;
   }
   .experience-row {
-    grid-template-columns: 95px 1fr;
+    grid-template-columns: 80px minmax(0, 1fr);
     padding-block: 22px;
-    gap: 13px;
+    gap: 16px;
   }
-  .experience-date {
-    font-size: 9px;
+  .experience-logo {
+    width: 80px;
+    min-height: 56px;
+  }
+  .experience-logo img {
+    width: 80px;
+    height: 56px;
   }
   .experience-row h3 {
     font-size: 15px;

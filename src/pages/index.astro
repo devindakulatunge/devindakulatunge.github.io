@@ -53,7 +53,7 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
           practical problems.
         </p>
         <p>
-          After studying at the University of Nottingham, I worked at Synopsys Lanka on power
+          After studying at the University of Nottingham, I worked at Synopsys Inc on power
           estimation and signoff validation for PrimePower. I’m now pursuing an MSc in Computer
           Science and Engineering at the University of Oulu, specializing in Computer Engineering.
         </p>
@@ -64,7 +64,16 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
         </p>
         <div class="experience-list">
           <div class="experience-row">
-            <span class="experience-date">2026 to present</span>
+            <div class="experience-logo" aria-hidden="true">
+              <img
+                src="/images/logos/oulu.svg"
+                alt=""
+                width="112"
+                height="64"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             <div>
               <h3>University of Oulu</h3>
               <p>
@@ -75,9 +84,18 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
             </div>
           </div>
           <div class="experience-row">
-            <span class="experience-date">2022 to 2026</span>
+            <div class="experience-logo" aria-hidden="true">
+              <img
+                src="/images/logos/synopsys.svg"
+                alt=""
+                width="112"
+                height="64"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             <div>
-              <h3>Synopsys Lanka</h3>
+              <h3>Synopsys Inc</h3>
               <p>
                 Power Estimation &amp; Signoff Validation Engineer
                 <br />
@@ -86,10 +104,19 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
             </div>
           </div>
           <div class="experience-row">
-            <span class="experience-date">BEng</span>
+            <div class="experience-logo" aria-hidden="true">
+              <img
+                src="/images/logos/nottingham.svg"
+                alt=""
+                width="112"
+                height="64"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             <div>
               <h3>University of Nottingham</h3>
-              <p>Electrical and Electronic Engineering</p>
+              <p>BEng, Electrical and Electronic Engineering</p>
             </div>
           </div>
         </div>

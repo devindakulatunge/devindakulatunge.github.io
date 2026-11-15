@@ -29,7 +29,7 @@ Digital design becomes more concrete when a functional model is compared with an
 
 ## The connection to my background
 
-At Synopsys Lanka, I worked on power estimation and signoff validation for PrimePower. These laboratory exercises build on my interest in relating tool output to the behavior of the underlying design.
+At Synopsys Inc, I worked on power estimation and signoff validation for PrimePower. These laboratory exercises build on my interest in relating tool output to the behavior of the underlying design.
 
 ## What I focus on
 
