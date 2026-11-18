@@ -1,9 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import Icon from '../components/Icon.astro';
 import { profile } from '../data/profile';
+import tinkerer from '../assets/tinkerer.webp';
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 ---
 
@@ -46,6 +48,19 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
         <a href={profile.github} target="_blank" rel="noopener noreferrer" class="text-link">
           Find me on GitHub <Icon name="external" size={18} />
         </a>
+        <figure class="about-character">
+          <Image
+            src={tinkerer}
+            alt="The Tinkerer, a curious pixel robot with a red scarf and a bag of tools."
+            width={256}
+            widths={[128, 192, 256, 384, 512]}
+            sizes="(max-width: 540px) 112px, (max-width: 820px) 144px, 256px"
+            format="webp"
+            quality={90}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
       <div class="about-content">
         <p class="about-lead">

@@ -97,6 +97,8 @@ The build defaults to `https://devinda.io` for canonical and social sharing URLs
 
 ## Content notes
 
+The Tinkerer is the original pixel character in About me. The approved standing pose is bundled in `src/assets/tinkerer.webp`. Astro generates responsive WebP versions, and the layout places the character below the introduction on desktop and beside it on smaller screens.
+
 The About section uses locally bundled organisation logos from their official sources:
 
 - University of Oulu: the white symbol from the [university icon sprite](https://www.oulu.fi/themes/custom/nextgen/dist/icons.svg), following the [logo guidelines](https://www.oulu.fi/en/brand-guidelines/design-elements/logo).
